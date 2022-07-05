@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #text1{
+                color:black;
+                font:normal small-caps bold  50px  'Times New Roman', Times, serif;
+                border:5px solid transparent;
+                background-color: whitesmoke;
+                padding: 3px;
+                
+            }
+            #text2{
+                color:black;
+                font:normal small-caps bold 50px  'Times New Roman', Times, serif;
+                border: 5px solid transparent;
+                background-color: whitesmoke;
+                padding: 3px;
+                 
+                
+
+            }
+            #text3{
+                color:black;
+                font:normal small-caps bold 50px  'Times New Roman', Times, serif;
+                border:5px solid transparent;
+                background-color: whitesmoke;
+                margin-top:350px;
+                padding: 3px;
+                
+            }
+            #div1{
+                border: 1px solid violet;
+                border-radius: 50%;
+                background-color: violet;
+                margin: auto;
+                height: 340px;
+                width: 360px;
+                text-align: center;
+                transform: translate(0px,150px);
+                background-image: linear-gradient(to bottom right,blue,violet);
+            }
+            #div2{
+                transform: translate(0px,150px);
+            }
+            #bdy{
+                background-image: linear-gradient(to bottom right,violet,blue);
+                height: 740px;
+            }
+            #idy{
+                font-size: large;
+                margin-bottom: 50px;
+                color: white;
+            }
+        </style>
+     </head>
+        <body onload="startTime()" >
+            
+            <div id="bdy">
+                <h1 style="text-align: center;">Digital Clock Using <br><br><strong style="font-size: 50px;">HTML,CSS,JAVASCRIPT</strong></h1>
+            <div id="div1">
+                <div id="div2">
+                <span id="text1"></span> <strong id="idy">:</strong>
+                <span id="text2"></span> <strong id="idy">:</strong>
+                <span id="text3"></span> 
+                </div>
+            </div>
+            </div>
+ <script>
+        function startTime(){
+            const today=new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('text1').innerHTML = h;
+            document.getElementById('text2').innerHTML = m;
+            document.getElementById('text3').innerHTML = s;
+            setTimeout(startTime,1000);
+        }
+            function checkTime(t)
+            {
+                if(t <10){t = "0"+t}
+                return t;
+            }
+        
+    </script>
+</body>
+</html>
